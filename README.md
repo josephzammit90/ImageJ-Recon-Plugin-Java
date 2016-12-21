@@ -1,7 +1,7 @@
 # ImageJJavaReconLib
 ImageJ Plugin Library for Image (OPT) Pre-processing, processing and reconstruction.
 
-The main goal of this project was to design, prototype, and implement an open source library of plugins in ImageJ [5]
+The main goal of this project was to design, prototype, and implement an open source library of plugins in ImageJ
 (an image processing tool coded in Java) that would allow a user to go from a set of projections to a set of reconstructed 2D images which can be stacked on top of each other to render a 3D model of the imaged sample.
 
 Notes
