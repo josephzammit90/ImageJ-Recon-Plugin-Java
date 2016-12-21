@@ -3,10 +3,14 @@ ImageJ Plugin Library for Image (OPT) Pre-processing, processing and reconstruct
 
 Notes
   i). See 'ImageJ Plugin Library Manual.pdf' for a full description of the plugins
+  
   ii).
+  
   iii). A description of the main classes is given below.
-  iv). A description of test data that can be used with these plugins is given below. Material can be found in the 'Test' folder.
-  v). 
+  
+  iv). A description of test data that can be used with these plugins is given below. Material can be found in the 'Test Data' folder.
+  
+  v). A description of validation data that can be used with these plugins is given below. Material can be found in the 'Validation' folder.
 
 
 ********************
