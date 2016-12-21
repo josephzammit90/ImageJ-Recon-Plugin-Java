@@ -1,8 +1,28 @@
 # ImageJJavaReconLib
-ImageJ Plugin Library for Image (OPT) Pre-processing, processing and reconstruction.
+The aim of this project was to create an ImageJ plugin library which allows a user to go from a set of tomographic projections (acquired using an OPT imaging system, for example) to a set of 2D slices which can be stacked on top of each other to realise a 3D model of the imaged sample.
 
-The main goal of this project was to design, prototype, and implement an open source library of plugins in ImageJ
-(an image processing tool coded in Java) that would allow a user to go from a set of projections to a set of reconstructed 2D images which can be stacked on top of each other to render a 3D model of the imaged sample.
+This constructed library consists of 8 plugins which when used in turn guide the user through all the processing required to achieve this goal. For a full description for the created plugins please refer to the attached manual, a sort description is provided below. All the plugins can be used as standalone programs with your own data. 
+
+1). Derive Focus Measure Plugin: The Derive Focus Measure Plugin uses the Tenengrad variance to calculate the focus measure in each input image. Input: Image/Image Stack, Output: focus measure.
+
+2). Estimate Background Plugin: This averages a stack of images and outputs a single averaged image (quick and dirty 'LPF').
+
+3). Beer-Lambert Correction Plugin: Takes a projection (or stack of projections) and a background image (or stack of the same size as the projection stack), applies the Beer-Lambert law and outputs the correct projection/s.
+
+4). Image Noise Estimation Plugin: Estimates the noise variance.
+
+5). Estimate Tilt & Static Offset Plugin: Assuming that a marker bead is present in the projections, this plugin provides an estimate for any tilt/offset present in the imaging system.
+
+6). Dynamic Offset Correction Plugin: Corrects for dynamic offset. (requires the 'Estimate Tilt & Static Offset' Plugin to be run first.)
+
+7). Create Sinogram Plugin: Creates a sinogram stack from a stack of projections.
+
+8). 2D Reconstruction Plugin: 2D Reconstruction is the process of creating a 2D image from a sinogram. The 2D Reconstruction Plugin can be used as a stand-alone plugin for any input sinogram/s and will output the corresponding reconstructed 2D slices using back-projection (BP) or Filtered back-projection (FBP). CPU/GPU acceleration is available (see manual).
+
+Assuming you start of with a set of background and sample projections, a typical workflow would be:
+
+
+
 
 Notes
   i). See 'ImageJ Plugin Library Manual.pdf' for a full description of the plugins
