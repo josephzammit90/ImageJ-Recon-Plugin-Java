@@ -3,6 +3,10 @@ The aim of this project was to create an ImageJ plugin library which allows a us
 
 This constructed library consists of 8 plugins which when used in turn guide the user through all the processing required to achieve this goal. For a full description for the created plugins please refer to the attached manual, a sort description is provided below. All the plugins can be used as standalone programs with your own data. 
 
+********************
+Plugin Description (see Manual)
+********************
+
 1). Derive Focus Measure Plugin: The Derive Focus Measure Plugin uses the Tenengrad variance to calculate the focus measure in each input image. Input: Image/Image Stack, Output: focus measure.
 
 2). Estimate Background Plugin: This averages a stack of images and outputs a single averaged image (quick and dirty 'LPF').
@@ -19,12 +23,30 @@ This constructed library consists of 8 plugins which when used in turn guide the
 
 8). 2D Reconstruction Plugin: 2D Reconstruction is the process of creating a 2D image from a sinogram. The 2D Reconstruction Plugin can be used as a stand-alone plugin for any input sinogram/s and will output the corresponding reconstructed 2D slices using back-projection (BP) or Filtered back-projection (FBP). CPU/GPU acceleration is available (see manual).
 
-Assuming you start of with a set of background and sample projections, a typical workflow would be:
+********************
+Workflow example
+********************
+
+Assuming you start off with a set of background and sample projections, a typical workflow would be:
+
+1). Estimate the average background using the 'Estimate Background' Plugin. Input: Background image stack, Output: Average background image.
+
+2). Apply beer-lambert correction using your sample projection stack (the image stack acquired from your imaging system). Input: Sample projection stack and the Average background image, Output: Corrected sample projection stack.
+
+3). *Optional. The 'Estimate Tilt & Static Offset Correction' Plugin tracks the trajectory of a marker bead placed in the sample. This provides an estimate of tilt/offset errors present in the imaging system. This is hardware dependent and requires a dark marker bead to be imaged with the sample. If not applicable ignore. Input: projection stack (with a marker bead), Output: tilt and offset errors.
+
+4). Create sinograms using the corrected sample projection stack (‘Create Sinogram’ Plugin). Input: Corrected sample projection stack, Output: Sinogram Stack. Optional: If known, tilt and offset errors can be corrected, if not leave these features disabled. 
+
+5). *Optional. Dynamic offsets can be corrected for using the 'Dynamic Offset Correction' Plugin. This requires the 'Estimate Tilt & Static Offset Correction' Plugin to be used before hand (step 3). Input: Sinogram stack, Output: Dynamic offset corrected sinogram stack.
+
+6). *Optional. At any point, the noise variance of your image stack can be estimated using the 'Image Noise Estimate Plugin'. Input: image/image stack, Output: estimated variance. You can use any 3rd party plugins to de-noise your images. 
+
+7). ‘2D Reconstruction Plugin’: Uses back-projection or filtered back-projection to reconstruct 2D slices from a sinogram stack. GPU/CPU acceleration is available (kernel is yet to be optimised). Input: Sinogram stack. Output: Reconstructed 2D slices. The reconstructed slices can be stacked resulting in a 3D rendition of the imaged sample.
 
 
-
-
+********************
 Notes
+********************
   i). See 'ImageJ Plugin Library Manual.pdf' for a full description of the plugins
   
   ii). To install and start using this ImageJ Plugin please download 'Sensor_CDT.jar' in the master branch and follow the installation guide in the manual.
