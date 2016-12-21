@@ -1,0 +1,52 @@
+kernel void gpu_kernel(global const float *index, global const float *rindex, global const float *Np, global const float *h, global const float *w, global const float *step_r, global const float *x_offset, global const float *filtered, global float *R_p) { 
+  	unsigned int xid = get_global_id(0);
+	
+  	int theta = xid+1+(int)index[0];
+  	float Np2 = Np[0];
+  	float w2 = w[0];
+  	float h2 = h[0];
+  	float x_offset2 = x_offset[0];
+  	float step_r2 = step_r[0];
+  	
+  	barrier(CLK_LOCAL_MEM_FENCE);
+
+	float t = (3.14159265359/180.0) * ( (((float)theta) - 1) * step_r2);
+
+	float xc = (Np2/2.0);
+	float yc = (Np2/2.0);
+	
+	float q1=0.0; 
+	float q2=0.0;
+	
+	unsigned int Npi = (int)Np2;
+
+	for (int x=1;x<=Npi;x++){
+		for (int y=1;y<=Npi;y++){
+		
+			float r = (((float)x-xc)*cos(t) + ((float)y-yc)*sin(t)) +  x_offset2;	
+			
+			if ((int)ceil(r) == (int)floor(r)){
+				int row = (int) ceil(r)-1;
+				int column = theta-1;
+			
+				q1=filtered[(row*(int)w2)+(column)];
+				q2=0;
+			} else {
+				int row_q1 = (int) ceil(r)-1;
+				int column_q1 = theta-1;
+				
+				int row_q2 = (int) floor(r)-1;
+				int column_q2 = theta-1;
+				
+				q1=filtered[(row_q1*(int)w2)+(column_q1)]*(r - floor(r));
+				q2=filtered[(row_q2*(int)w2)+(column_q2)]*(ceil(r) - r);					
+			}
+
+			int index = ((x-1)*Npi) + (y-1);
+			int index2 = (index * (int) rindex[0]);
+			
+			R_p[xid + index2] = q1 + q2;
+		}
+	}
+}
+
