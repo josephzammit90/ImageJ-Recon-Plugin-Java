@@ -109,6 +109,9 @@ e). The Dynamic Offset Correction plugin can be tested using ‘A4 - Bead Sinogr
 ********************
 Validation Data
 ********************
+
+Validates the implementation of these Java plugins. Please ignore if you haven't requested the full report.
+
 a). phantom3dAniso.m: 3D phantom validation exercise.
 
 b). backproj_works_v9.m: Our back-projection algorithm using linear interpolation. The Java implementation is based on this code.
