@@ -45,7 +45,7 @@ Assuming you start off with a set of background and sample projections, a typica
 
 6). *Optional. At any point, the noise variance of your image stack can be estimated using the 'Image Noise Estimate Plugin'. Input: image/image stack, Output: estimated variance. You can use any 3rd party plugins to de-noise your images. 
 
-7). ‘2D Reconstruction Plugin’: Uses back-projection or filtered back-projection to reconstruct 2D slices from a sinogram stack. GPU/CPU acceleration is available (kernel is yet to be optimised). Input: Sinogram stack. Output: Reconstructed 2D slices. The reconstructed slices can be stacked resulting in a 3D rendition of the imaged sample.
+7). With the sinogram stack in hand, the final step is to reconstruct the imaged sample using the ‘2D Reconstruction Plugin’. This uses back-projection or filtered back-projection to reconstruct 2D slices from a sinogram stack. GPU/CPU acceleration is available (kernel is yet to be optimised). Input: Sinogram stack. Output: Reconstructed 2D slices. The reconstructed slices can be stacked (e.g. Using Volumer Viewer in ImageJ) resulting in a 3D rendition of the imaged sample.
 
 
 ********************
@@ -94,7 +94,9 @@ m). Main_Tilt_Offset_Estimation - This is the main class for the Estimate Tilt &
 ********************
 Test Data
 ********************
-a). ‘A1 - Sinogram to test 2D reconstruction’: A stack of 10 sinograms to test the 2D Reconstruction plugin. The angle between projection = 0.9 degrees for all images. The result is give in ‘A1 - result’ using default settings with GPU acceleration.
+Note: Some files are missing due to their large size. (Need to update)
+
+a). ‘A1 - Sinogram to test 2D reconstruction’: A stack of 10 sinograms to test the 2D Reconstruction plugin. The angle between projection = 0.9 degrees for all images. The result is given in ‘A1 - result’ using default settings with GPU acceleration.
 
 b). ‘A2 - cameraman’: A single image used to test the Derive Focus Measure plugin. The result should be: 5214128498.854.
 
