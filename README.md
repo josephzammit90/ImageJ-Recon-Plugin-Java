@@ -1,7 +1,7 @@
 # ImageJJavaReconLib
 The aim of this project was to create an ImageJ plugin library which allows a user to go from a set of tomographic projections (acquired using an OPT imaging system, for example) to a set of 2D slices which can be stacked on top of each other to realise a 3D model of the imaged sample.
 
-This constructed library consists of 8 plugins which when used in turn guide the user through all the processing required to achieve this goal. For a full description for the created plugins please refer to the attached manual, a sort description is provided below. All the plugins can be used as standalone programs with your own data in Windows or Mac OS.
+This constructed library consists of 8 plugins which when used in turn guide the user through all the processing required to achieve this goal. For a full description for the created plugins please refer to the attached manual, a short description is provided below. All the plugins can be used as standalone programs with your own data in Windows or Mac OS.
 
 The main plugins are the 'Create Sinogram' and '2D reconstruction' Plugins. The other plugins provide some form of error estimate, correction, and pre-processing (these are optional and might be hardware dependent). 
 
