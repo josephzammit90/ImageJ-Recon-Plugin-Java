@@ -1,3 +1,5 @@
+Note: This is my first java project (and my first dealing with the Java language).
+
 # ImageJJavaReconLib
 The aim of this project was to create an ImageJ plugin library which allows a user to go from a set of tomographic projections (acquired using an OPT imaging system, for example) to a set of 2D slices which can be stacked on top of each other to realise a 3D model of the imaged sample.
 
