@@ -52,7 +52,7 @@ Assuming you start off with a set of background and sample projections, a typica
 ********************
 Notes
 ********************
-  i). See 'ImageJ Plugin Library Manual.pdf' for a full description of the plugins
+  i). See 'OptiJ Manual.pdf' for a full description of the plugins
 
   ii). To install and start using this ImageJ Plugin please download 'Sensor_CDT.jar' in the master branch and follow the installation guide in the manual.
 
