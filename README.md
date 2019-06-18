@@ -1,4 +1,4 @@
-**Please note that I am not maintaining this codebase. The jar above is depreciated. For any queries and access to the latest tools please visit: https://github.com/pedropabloVR/ImageJ-Recon-Plugin-Java.**
+**Please note that I am not maintaining this codebase. The jar above is depreciated, as is src. A src patch was issued here: https://github.com/josephzammit90/2D_Reconstruction_patched. For any queries and access to the latest tools please visit: https://github.com/pedropabloVR/ImageJ-Recon-Plugin-Java.**
 
 # OptiJ
 
