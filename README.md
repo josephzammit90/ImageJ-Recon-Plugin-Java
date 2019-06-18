@@ -1,4 +1,4 @@
-** **Please note that I am not maintaining this codebase. For any queries and access to manual see: https://github.com/pedropabloVR/ImageJ-Recon-Plugin-Java
+**Please note that I am not maintaining this codebase. For any queries and access to manual see: https://github.com/pedropabloVR/ImageJ-Recon-Plugin-Java**
 
 # OptiJ
 
