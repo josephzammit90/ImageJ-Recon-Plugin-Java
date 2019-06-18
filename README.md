@@ -6,7 +6,7 @@ This constructed library consists of 8 plugins which guide the user through the 
 
 The main plugins are 'Create Sinogram' and '2D reconstruction'. The other plugins provide some form of error estimate, correction, and pre-processing (these are optional and might be hardware dependent).
 
-A detailed report (55 pages) is available at: josephzammit90@gmail.com.
+A detailed report is available upon request to the author at: ppv23@cam.ac.uk.
 
 ********************
 Plugin Description (see Manual)
