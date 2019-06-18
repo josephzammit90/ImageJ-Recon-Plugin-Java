@@ -1,3 +1,5 @@
+Please note that I am not longer mainting this codebase. For any queries and access to manual see: https://github.com/pedropabloVR/ImageJ-Recon-Plugin-Java
+
 # OptiJ
 
 OptiJ is an ImageJ plugin library which allows a user to go from a set of tomographic projections (acquired using an OPT imaging system, for example) to a set of 2D slices which can be stacked on top of each other to reconstruct a 3D model of the imaged sample.
@@ -5,8 +7,6 @@ OptiJ is an ImageJ plugin library which allows a user to go from a set of tomogr
 This constructed library consists of 8 plugins which guide the user through the tomographic reconstruction process. A short description of the OptiJ plugins is provided below, for a full description for the created plugins please refer to the attached manual.  All the plugins can be used as standalone programs with your own data in Windows or Mac OS.
 
 The main plugins are 'Create Sinogram' and '2D reconstruction'. The other plugins provide some form of error estimate, correction, and pre-processing (these are optional and might be hardware dependent).
-
-A detailed report (55 pages) is available at: josephzammit90@gmail.com.
 
 ********************
 Plugin Description (see Manual)
